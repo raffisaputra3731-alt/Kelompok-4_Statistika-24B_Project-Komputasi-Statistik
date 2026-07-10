@@ -30,3 +30,45 @@ library(shinycssloaders)
 options(shiny.sanitize.errors = FALSE)
 
 alpha_default <- 0.05
+
+`%||%` <- function(x, y) if (is.null(x) || length(x) == 0) y else x
+
+fmt_num <- function(x, digits = 4) {
+  out <- ifelse(is.na(x) | !is.finite(x), "Tidak terdefinisi", formatC(x, digits = digits, format = "f"))
+  unname(out)
+}
+
+fmt_pct <- function(x, digits = 2) {
+  out <- ifelse(is.na(x) | !is.finite(x), "Tidak terdefinisi", paste0(formatC(100 * x, digits = digits, format = "f"), "%"))
+  unname(out)
+}
+
+ci_label <- function(alpha) {
+  level <- 100 * (1 - alpha)
+  if (abs(level - round(level)) < 1e-8) paste0(round(level), "% CI") else paste0(formatC(level, digits = 1, format = "f"), "% CI")
+}
+
+decision_text <- function(p_value, alpha = alpha_default) {
+  if (is.na(p_value) || !is.finite(p_value)) return("Keputusan tidak dapat ditentukan karena p-value tidak terdefinisi.")
+  if (p_value < alpha) paste0("Tolak H0 pada taraf signifikansi ", alpha, ".") else paste0("Gagal menolak H0 pada taraf signifikansi ", alpha, ".")
+}
+
+relationship_text <- function(p_value, alpha = alpha_default) {
+  if (is.na(p_value) || !is.finite(p_value)) return("hubungan belum dapat disimpulkan secara inferensial")
+  if (p_value < alpha) "terdapat hubungan yang signifikan" else "belum terdapat bukti hubungan yang signifikan"
+}
+
+association_strength <- function(or_value) {
+  if (is.na(or_value) || !is.finite(or_value)) return("tidak dapat diklasifikasikan")
+  distance <- abs(log(or_value))
+  if (distance < log(1.5)) return("lemah")
+  if (distance < log(3)) return("sedang")
+  "kuat"
+}
+
+safe_name <- function(x, fallback) {
+  x <- trimws(as.character(x %||% ""))
+  if (!nzchar(x)) fallback else x
+}
+
+is_2x2 <- function(mat) identical(dim(mat), c(2L, 2L))
