@@ -1,11 +1,13 @@
 <div align="center">
 
-<img src="download.png" alt="Logo Universitas Negeri Jakarta" width="170"/>
+<img src="logo_unj.png" width="180">
 
 # 📊 Proyek Akhir Komputasi Statistik
 ## Dashboard Analisis Data Kategorik Berbasis R Shiny
 
 **Kelompok 4 – Statistika 2024 B**
+
+</div>
 
 ![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
 ![R Shiny](https://img.shields.io/badge/R%20Shiny-0099CC?style=for-the-badge)
