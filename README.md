@@ -1,18 +1,17 @@
 <div align="center">
 
-<img src="logo_unj.png" width="180">
-
 # 📊 Proyek Akhir Komputasi Statistik
 ## Dashboard Analisis Data Kategorik Berbasis R Shiny
 
-**Kelompok 4 – Statistika 2024 B**
-
-</div>
+**Kelompok 4 – Statistika 2024 B**  
+**Program Studi Statistika**  
+**Fakultas Matematika dan Ilmu Pengetahuan Alam**  
+**Universitas Negeri Jakarta**
 
 ![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
 ![R Shiny](https://img.shields.io/badge/R%20Shiny-0099CC?style=for-the-badge)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github)
-![Statistics](https://img.shields.io/badge/Statistics-Analysis-success?style=for-the-badge)
+![Statistics](https://img.shields.io/badge/Statistics-Data%20Analysis-success?style=for-the-badge)
 ![Academic Project](https://img.shields.io/badge/Academic-Project-orange?style=for-the-badge)
 
 </div>
@@ -21,21 +20,19 @@
 
 # 📖 Deskripsi Proyek
 
-Aplikasi ini merupakan **dashboard interaktif berbasis R Shiny** yang dikembangkan sebagai **Proyek Akhir Mata Kuliah Komputasi Statistik** Program Studi Statistika Universitas Negeri Jakarta.
+Dashboard ini merupakan aplikasi berbasis **R Shiny** yang dikembangkan sebagai **Proyek Akhir Mata Kuliah Komputasi Statistik**. Aplikasi dirancang untuk membantu pengguna melakukan **analisis data kategorik** secara interaktif tanpa harus menuliskan syntax R secara manual.
 
-Dashboard ini dirancang untuk mempermudah mahasiswa, dosen, maupun peneliti dalam melakukan **analisis data kategorik** secara cepat, interaktif, dan tanpa harus menuliskan syntax R secara manual.
-
-Pengguna cukup mengunggah data atau memasukkan data secara manual, kemudian aplikasi akan melakukan berbagai analisis statistik secara otomatis beserta interpretasi hasilnya.
+Pengguna dapat memasukkan data secara manual maupun mengunggah file CSV, kemudian aplikasi akan melakukan analisis statistik, menghasilkan visualisasi, serta memberikan interpretasi hasil secara otomatis.
 
 ---
 
 # 🎯 Tujuan Pengembangan
 
-- Mempermudah analisis data kategorik secara interaktif.
-- Mengurangi kesalahan perhitungan manual.
-- Menyediakan interpretasi hasil secara otomatis.
+- Mempermudah proses analisis data kategorik.
+- Menyediakan antarmuka yang mudah digunakan.
+- Menghasilkan analisis statistik secara otomatis.
 - Menampilkan visualisasi data yang informatif.
-- Mendukung proses pembelajaran Analisis Data Kategorik.
+- Mendukung proses pembelajaran analisis data kategorik menggunakan R Shiny.
 
 ---
 
@@ -43,10 +40,10 @@ Pengguna cukup mengunggah data atau memasukkan data secara manual, kemudian apli
 
 ## 📥 Input Data
 
-- ✅ Input Data Manual
-- ✅ Upload CSV
-- ✅ Validasi Data
-- ✅ Pembentukan Tabel Kontingensi Otomatis
+- ✅ Input data manual
+- ✅ Upload file CSV
+- ✅ Validasi data
+- ✅ Pembentukan tabel kontingensi otomatis
 
 ---
 
@@ -56,7 +53,7 @@ Pengguna cukup mengunggah data atau memasukkan data secara manual, kemudian apli
 - ✅ Fisher Exact Test
 - ✅ Likelihood Ratio (G-Test)
 - ✅ Continuity Correction
-- ✅ McNemar Test (jika memenuhi syarat)
+- ✅ McNemar Test (sesuai syarat)
 
 ---
 
@@ -83,20 +80,20 @@ Pengguna cukup mengunggah data atau memasukkan data secara manual, kemudian apli
 
 ## 📄 Output
 
-- ✅ Ringkasan Statistik
-- ✅ Interpretasi Otomatis
-- ✅ Tabel Hasil Analisis
-- ✅ Export Hasil
+- ✅ Ringkasan hasil analisis
+- ✅ Interpretasi otomatis
+- ✅ Tabel hasil statistik
+- ✅ Export hasil analisis
 
 ---
 
 # 🛠️ Teknologi yang Digunakan
 
-| Teknologi | Keterangan |
-|-----------|------------|
+| Teknologi | Fungsi |
+|-----------|--------|
 | R | Bahasa Pemrograman |
-| R Shiny | Framework Dashboard |
-| bs4Dash | Dashboard UI |
+| R Shiny | Framework Web |
+| bs4Dash | Dashboard Interface |
 | DT | Interactive Data Table |
 | ggplot2 | Visualisasi Data |
 | DescTools | Analisis Statistik |
@@ -126,9 +123,9 @@ Pengguna cukup mengunggah data atau memasukkan data secara manual, kemudian apli
 
 ---
 
-# 🌳 Workflow GitHub
+# 🌳 Workflow Pengembangan
 
-Repository ini dikelola menggunakan workflow Git.
+Repository ini dikelola menggunakan Git dan GitHub dengan alur pengembangan kolaboratif.
 
 - Setiap anggota memiliki branch masing-masing.
 - Setiap anggota melakukan commit sesuai kontribusinya.
@@ -139,20 +136,19 @@ Repository ini dikelola menggunakan workflow Git.
 
 # 📂 Struktur Repository
 
-```
+```text
 Kelompok-4_Statistika-24B_Project-Komputasi-Statistik
 │
 ├── app.R
 ├── README.md
 ├── data/
 ├── www/
-├── assets/
 └── documentation/
 ```
 
 ---
 
-# 🚀 Cara Menjalankan
+# 🚀 Cara Menjalankan Aplikasi
 
 ### 1. Clone Repository
 
@@ -171,9 +167,9 @@ install.packages(c(
   "ggplot2",
   "DescTools",
   "epitools",
-  "readxl",
+  "vcd",
   "readr",
-  "vcd"
+  "readxl"
 ))
 ```
 
@@ -183,61 +179,52 @@ install.packages(c(
 shiny::runApp()
 ```
 
-atau buka file
-
-```
-app.R
-```
-
-kemudian klik
-
-```
-Run App
-```
+atau buka file **app.R**, kemudian klik **Run App** pada RStudio.
 
 ---
 
-# 🌐 Deploy Aplikasi
+# 🌐 Tautan Proyek
 
-## GitHub Repository
+## 📂 Repository GitHub
 
+**Repository:**  
 https://github.com/raffisaputra3731-alt/Kelompok-4_Statistika-24B_Project-Komputasi-Statistik
 
-## R Shiny Apps
+---
 
+## 🚀 Deploy R Shiny
+
+**Akses aplikasi secara online:**  
 https://raffisaputra.shinyapps.io/ProjectKomputasiStatistik_Kelompok4/
 
 ---
 
-# 📸 Tampilan Aplikasi
+# 📸 Dokumentasi Aplikasi
 
-> Tambahkan screenshot aplikasi pada bagian ini.
+Tambahkan screenshot aplikasi pada bagian ini, misalnya:
 
-Contoh:
-
-- Halaman Beranda
-- Input Manual
-- Upload CSV
-- Hasil Analisis
-- Visualisasi
-- Export
+- 🏠 Halaman Beranda
+- 📥 Input Manual
+- 📄 Upload CSV
+- 📊 Hasil Analisis
+- 📈 Visualisasi
+- 📤 Export Hasil
 
 ---
 
-# 📜 Academic Project
+# 📜 Lisensi
 
 Repository ini dikembangkan sebagai **Proyek Akhir Mata Kuliah Komputasi Statistik** Program Studi Statistika, Fakultas Matematika dan Ilmu Pengetahuan Alam, Universitas Negeri Jakarta.
 
-Seluruh kode sumber disusun untuk tujuan akademik dan pembelajaran.
+Seluruh isi repository digunakan untuk **kepentingan akademik dan pembelajaran**.
 
 ---
 
 <div align="center">
 
-### Universitas Negeri Jakarta
+### ⭐ Terima kasih telah mengunjungi repository ini ⭐
 
-**Program Studi Statistika**
-
-Kelompok 4 • 2026
+**Kelompok 4 — Statistika 2024 B**  
+**Universitas Negeri Jakarta**
 
 </div>
